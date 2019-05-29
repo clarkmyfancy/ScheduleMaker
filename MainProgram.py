@@ -14,7 +14,7 @@ class programMode(Enum):
 
 class MainProgram:
 
-		# self.currentTime = datetime.datetime.now()
+	# self.currentTime = datetime.datetime.now()
 
 	def run(self):
 		console = Console()
@@ -22,7 +22,6 @@ class MainProgram:
 		programShouldEnd = False
 
 		console.printStartScreen()
-
 		while not programShouldEnd:
 			selectedAction = console.promptStartSelectionToUser().lower()
 
@@ -32,8 +31,9 @@ class MainProgram:
 				dao.updateDBWithTask(newTask)
 
 			elif selectedAction == programMode.DISPLAY_TODO_LIST.value:
-				todoList = self.worksheet.get_all_records()
-				console.displayList(todoList)
+				fields = dao.getFieldsFromDB()
+				records = dao.getRecordsFromDB()
+				console.displayTodoListWithFieldsAndRecords(fields, records)
 
 			programShouldEnd = console.promptShouldProgramEndToUser()
 
