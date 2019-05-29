@@ -27,9 +27,18 @@ class Console:
 		print()
 		return (name, type, priority, finishByDateTime, descr)
 
-	def displayList(self, todoList):
-		for x in todoList:
-			print(x)
+	def displayTodoListWithFieldsAndRecords(self, fields, records):
+		print(fields[0].upper() + "\t\t| " + fields[5].upper())
+		dashes = ""
+		for x in range(0, 100):
+			dashes += "-"
+		print(dashes)
+		for x in records:
+			if (len(x) < len(fields)):
+				print(x[0] + "\t|")
+			else:
+				print(x[0] + "\t| " + x[5])
+			print(dashes)
 		print()
 
 	def promptShouldProgramEndToUser(self):
