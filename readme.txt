@@ -42,16 +42,6 @@ shit to do:
 	#
 	# # all of this scheduling could be used in a console like thing or object to show things to user
 	#
-	# scope = ['https://www.googleapis.com/auth/drive']
-	# serviceAccountCreds = ServiceAccountCredentials.from_json_keyfile_name('Scheduler-30eefa3a4c69.json', scope)
-	# gc = gspread.authorize(serviceAccountCreds)
-	# worksheet = gc.open('Scheduler').sheet1
-	#
-	# recordsInTable = worksheet.get_all_records()
-	# # for x in recordsInTable:
-	# pprint(recordsInTable)
-	#
-	#
 	#
 	# print()
 	# print()
