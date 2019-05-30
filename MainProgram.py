@@ -11,6 +11,9 @@ from TaskDAO import *
 class programMode(Enum):
 	ADD_TASK_TO_DB = 'a'
 	DISPLAY_TODO_LIST = 'd'
+	MARK_TASK_COMPLETED = 'c'
+	# REMOVE_TASK_FROM_DB = 'r'
+
 
 class MainProgram:
 
@@ -34,6 +37,13 @@ class MainProgram:
 				fields = dao.getFieldsFromDB()
 				records = dao.getRecordsFromDB()
 				console.displayTodoListWithFieldsAndRecords(fields, records)
+
+			elif selectedAction == programMode.MARK_TASK_COMPLETED.value:
+				dao.markTaskCompletedWithId(taskID)
+				pass
+
+			# elif selectedAction == programMode.REMOVE_TASK_FROM_DB.value:
+			# 	pass
 
 			programShouldEnd = console.promptShouldProgramEndToUser()
 
